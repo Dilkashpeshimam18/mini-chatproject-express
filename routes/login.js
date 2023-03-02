@@ -3,8 +3,8 @@ const express=require('express')
 const router=express.Router()
 
 router.get('/login',(req,res,next)=>{
-   res.send('<form action="/" method="POST"><input placeholder="username" name="username" type="text" /><button type="submit">login</button></form>')
-   res.redirect('/')
+   res.send('<form onsubmit="localStorage.setItem(`username`, document.getElementById(`username`).value)" action="/" method="POST"><input placeholder="username" name="username" type="text" id="username"  /><button type="submit">login</button></form>')
+//    res.redirect('/')
 })
 
 module.exports=router
